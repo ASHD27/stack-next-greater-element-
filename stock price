@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int p[7];
+	stack<int> s;
+	int a[7];
+    for(int i=0;i<7;i++)
+    {
+        cin>>p[i];
+    }
+    for(int i=0;i<7;i++)
+    {
+        int k=0;
+        bool done=false;
+while(	!s.empty() && done==false)
+        {
+         if(p[i]>=p[s.top()])                  ///n times pop
+		 s.pop();
+			else
+			done=true;
+		  } 
+		if(s.empty())
+		k=-1;
+		else if(!s.empty())
+		k=s.top();
+		a[i]=i-k;
+		s.push(i);                                 /// n times push
+		cout<<a[i]<<"  ";
+}
+return 0;
+}
